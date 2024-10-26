@@ -1,0 +1,6 @@
+[jobs.deny]
+command = ["cargo", "deny", "--color", "always", "check"]
+watch = ["deny.toml"]
+
+[keybindings]
+alt-d = "job:deny"

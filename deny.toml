@@ -1,0 +1,60 @@
+[graph]
+targets = [
+    "aarch64-apple-darwin",
+    "aarch64-pc-windows-msvc",
+    "aarch64-unknown-linux-gnu",
+    "x86_64-apple-darwin",
+    "x86_64-pc-windows-msvc",
+    "x86_64-unknown-linux-gnu",
+]
+
+[advisories]
+ignore = [
+]
+
+[licenses]
+allow = [
+    "Apache-2.0",
+    "BSD-2-Clause",
+    "BSD-3-Clause",
+    "BSL-1.0",
+    "CC0-1.0",
+    "ISC",
+    "MIT",
+    "MPL-2.0",
+]
+exceptions = [
+    { crate = "ring", allow = ["OpenSSL"] },
+    { crate = "slotmap", allow = ["Zlib"] },
+    { crate = "unicode-ident", allow = ["Unicode-DFS-2016"] },
+]
+
+[[licenses.clarify]]
+crate = "ring"
+expression = "MIT AND ISC AND OpenSSL"
+license-files = [
+    { path = "LICENSE", hash = 0xbd0eed23 },
+]
+
+[bans]
+skip = [
+    "ahash@0.7",
+    "bitflags@1",
+    "cfg_aliases@0.1",
+    "core-foundation@0.9",
+    "hashbrown@0.12",
+    "hashbrown@0.14",
+    "libloading@0.7",
+    "linux-raw-sys@0.4",
+    "rustc-hash@1",
+    "syn@1",
+    "sync_wrapper@0.1",
+    "tower@0.4",
+    "ttf-parser@0.20",
+    "ttf-parser@0.21",
+]
+skip-tree = [
+    { crate = "core-graphics@0.23", depth = 2 },
+    { crate = "foreign-types@0.3", depth = 2 },
+    { crate = "windows-sys@0.52", depth = 3 },
+]

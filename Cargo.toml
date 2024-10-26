@@ -1,0 +1,21 @@
+[package]
+name = "chatty"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[dependencies]
+anyhow = "1.0.92"
+axum = "0.8.0-alpha.1"
+iced = { version = "0.13.1", features = ["markdown", "tokio"] }
+image = { version = "0.25.4", default-features = false, features = ["png"] }
+jiff = "0.1.14"
+open = "5.3.0"
+reqwest = { version = "0.12.9", features = ["gzip", "rustls-tls"] }
+tokio = { version = "1.41.0", features = ["macros", "rt-multi-thread", "sync"] }
+tokio-tungstenite = { version = "0.24.0", features = ["rustls-tls-webpki-roots"] }
+twitch_api = { version = "0.7.0-rc.8", features = ["eventsub", "helix", "reqwest"] }
+
+[profile.release]
+lto = true
+strip = true
